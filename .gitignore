@@ -1,0 +1,20 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Model checkpoints
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+
+# Temporary files
+*.log
