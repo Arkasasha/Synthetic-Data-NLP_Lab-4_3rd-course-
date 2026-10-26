@@ -1,1 +1,1 @@
-﻿# Synthetic-Data-NLP_Lab4_3rd-course-
+﻿# Synthetic-Data-NLP_Lab-4_3rd-course-
