@@ -1,0 +1,130 @@
+{
+  "model": "E:\\VGTU\\5 semester\\Natural Language Processing\\lab 4\\models\\distilbert_ag_news_baseline",
+  "dataset": "original AG News test split",
+  "test_samples": 7600,
+  "accuracy": 0.9077631578947368,
+  "macro_precision": 0.9080518202692994,
+  "macro_recall": 0.9077631578947368,
+  "macro_f1": 0.907681812635098,
+  "per_class": {
+    "World": {
+      "precision": 0.9259259259259259,
+      "recall": 0.8947368421052632,
+      "f1": 0.9100642398286938,
+      "support": 1900
+    },
+    "Sports": {
+      "precision": 0.9573703133025167,
+      "recall": 0.9810526315789474,
+      "f1": 0.9690668053028334,
+      "support": 1900
+    },
+    "Business": {
+      "precision": 0.8524340770791075,
+      "recall": 0.8847368421052632,
+      "f1": 0.8682851239669421,
+      "support": 1900
+    },
+    "Sci/Tech": {
+      "precision": 0.8964769647696477,
+      "recall": 0.8705263157894737,
+      "f1": 0.8833110814419226,
+      "support": 1900
+    }
+  },
+  "confusion_matrix": [
+    [
+      1700,
+      57,
+      97,
+      46
+    ],
+    [
+      16,
+      1864,
+      16,
+      4
+    ],
+    [
+      63,
+      15,
+      1681,
+      141
+    ],
+    [
+      57,
+      11,
+      178,
+      1654
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "incorrect_count": 701,
+  "incorrect_examples": [
+    {
+      "test_index": 9,
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business",
+      "text": "Card fraud unit nets 36,000 cards In its first two years, the UK's dedicated card fraud unit, has recovered 36,000 stolen cards and 171 arrests - and estimates it saved 65m."
+    },
+    {
+      "test_index": 23,
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business",
+      "text": "Some People Not Eligible to Get in on Google IPO Google has billed its IPO as a way for everyday people to get in on the process, denying Wall Street the usual stranglehold it's had on IPOs. Public bidding, a minimum of just five shares, an open process with 28 underwriters - all this pointed to a new level of public participation. But this isn't the case."
+    },
+    {
+      "test_index": 24,
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business",
+      "text": "Rivals Try to Turn Tables on Charles Schwab By MICHAEL LIEDTKE     SAN FRANCISCO (AP) -- With its low prices and iconoclastic attitude, discount stock broker Charles Schwab Corp. (SCH) represented an annoying stone in Wall Street's wing-tipped shoes for decades..."
+    },
+    {
+      "test_index": 47,
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business",
+      "text": "Dell Exits Low-End China Consumer PC Market  HONG KONG (Reuters) - Dell Inc. &lt;DELL.O&gt;, the world's  largest PC maker, said on Monday it has left the low-end  consumer PC market in China and cut its overall growth target  for the country this year due to stiff competition in the  segment."
+    },
+    {
+      "test_index": 79,
+      "true_label": "World",
+      "predicted_label": "Sports",
+      "text": "Live: Olympics day four Richard Faulds and Stephen Parry are going for gold for Great Britain on day four in Athens."
+    },
+    {
+      "test_index": 83,
+      "true_label": "Business",
+      "predicted_label": "Sci/Tech",
+      "text": "Intel to delay product aimed for high-definition TVs SAN FRANCISCO -- In the latest of a series of product delays, Intel Corp. has postponed the launch of a video display chip it had previously planned to introduce by year end, putting off a showdown with Texas Instruments Inc. in the fast-growing market for high-definition television displays."
+    },
+    {
+      "test_index": 88,
+      "true_label": "World",
+      "predicted_label": "Sports",
+      "text": "U.S. Misses Cut in Olympic 100 Free ATHENS, Greece - Top American sprinters Jason Lezak and Ian Crocker missed the cut in the Olympic 100-meter freestyle preliminaries Tuesday, a stunning blow for a country that had always done well in the event.    Pieter van den Hoogenband of the Netherlands and Australian Ian Thorpe advanced to the evening semifinal a day after dueling teenager Michael Phelps in the 200 freestyle, won by Thorpe..."
+    },
+    {
+      "test_index": 106,
+      "true_label": "World",
+      "predicted_label": "Business",
+      "text": "Stocks Climb on Drop in Consumer Prices NEW YORK - Stocks rose for a second straight session Tuesday as a drop in consumer prices allowed investors to put aside worries about inflation, at least for the short term.    With gasoline prices falling to eight-month lows, the Consumer Price Index registered a small drop in July, giving consumers a respite from soaring energy prices..."
+    },
+    {
+      "test_index": 110,
+      "true_label": "Business",
+      "predicted_label": "Sci/Tech",
+      "text": "Yahoo! Ups Ante for Small Businesses Web giant Yahoo! is gambling that price cuts on its domain name registration and Web hosting products will make it more competitive with discounters in the space -- which means that small businesses looking to move online get a sweeter deal through ..."
+    },
+    {
+      "test_index": 111,
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business",
+      "text": "IBM Buys Two Danish Services Firms IBM said Tuesday it has acquired a pair of Danish IT services firms as part of its effort to broaden its presence in Scandinavia. As a result of the moves, IBM will add about 3,700 IT staffers to its global head count. Financial terms of ..."
+    }
+  ]
+}
