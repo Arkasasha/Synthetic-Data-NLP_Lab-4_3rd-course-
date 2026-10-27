@@ -1,0 +1,1 @@
+Write one short AG News-style news item in the {category} category. Give a headline and a two- or three-sentence summary, 35 to 80 words in total. Use the required Headline:/Summary: format.

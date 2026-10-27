@@ -1,0 +1,19 @@
+{
+  "backend": "Ollama",
+  "model_id": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "model_variant": "Qwen3-4B-Instruct-2507 Q4_K_M",
+  "ollama_version": "0.40.11",
+  "prompt_sha256": "b425f2b62d2e1199a53dae85f983b6ff1366664f2cf1e18c53a7683f18aac61c",
+  "seed": 42,
+  "n_per_category": 5,
+  "max_new_tokens": 180,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "think": false,
+  "prompt_files": [
+    "prompts/basic.txt",
+    "prompts/advanced.txt"
+  ]
+}
