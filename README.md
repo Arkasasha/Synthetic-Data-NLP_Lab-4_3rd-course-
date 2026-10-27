@@ -28,6 +28,6 @@ python -m pip install numpy pandas scikit-learn requests jupyterlab ipykernel
 jupyter lab notebooks/03_prompt_engineering.ipynb
 ```
 
-The notebook loads `prompts/basic.txt` and `prompts/advanced.txt`. It saves raw generations to `data/synthetic/task006/samples.jsonl`, automatic metrics and a run manifest to `results/task006/`, and a human review sheet to `results/task006/review_template.csv`. Fill the two 1-5 rating columns in that sheet and rerun its review cell to compare category fit and realism. The notebook resumes an interrupted run without regenerating completed samples; move the TASK-006 sample and result directories before starting a new experiment with different settings.
+The notebook loads `prompts/basic.txt` and `prompts/advanced.txt`. It saves raw generations to `data/synthetic/task006/samples.jsonl`, automatic metrics and a run manifest to `results/task006/`, and reads the scored review in `results/task006/review_scored.csv` for its quality comparison. The notebook resumes an interrupted run without regenerating completed samples; move the TASK-006 sample and result directories before starting a new experiment with different settings.
 
 The generated articles are fictional. Check factual plausibility and category fit before using them to train a classifier.
