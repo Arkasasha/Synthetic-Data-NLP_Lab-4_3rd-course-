@@ -26,3 +26,15 @@ data/processed/*
 
 # Temporary files
 *.log
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Generated datasets
+data/processed/
