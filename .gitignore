@@ -1,3 +1,31 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Model checkpoints
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+models/*
+!models/.gitkeep
+
+# Downloaded and prepared datasets
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Temporary files
+*.log
 # Python virtual environment
 .venv/
 
