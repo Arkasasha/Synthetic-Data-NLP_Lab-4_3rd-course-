@@ -1,0 +1,355 @@
+{
+  "input": "D:\\Projects\\5_sem\\Natural Language Processing\\lab4\\Synthetic-Data-NLP_Lab-4_3rd-course-\\data\\synthetic\\pilot_100.csv",
+  "output": "D:\\Projects\\5_sem\\Natural Language Processing\\lab4\\Synthetic-Data-NLP_Lab-4_3rd-course-\\data\\synthetic\\filtered.csv",
+  "settings": {
+    "min_words": 35,
+    "max_words": 80,
+    "near_duplicate_cosine_threshold": 0.95,
+    "embedding_model": "all-minilm:latest",
+    "embedding_digest": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+    "label_check_model": "qwen3:4b-instruct",
+    "label_check_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+  },
+  "before": {
+    "rows": 100,
+    "class_counts": {
+      "World": 25,
+      "Sports": 25,
+      "Business": 25,
+      "Sci/Tech": 25
+    },
+    "missing_text": 0,
+    "blank_text": 0,
+    "exact_duplicate_text": 0,
+    "mean_words": 54.52,
+    "distinct_2_first35": 0.3711764705882353
+  },
+  "after": {
+    "rows": 52,
+    "class_counts": {
+      "World": 19,
+      "Sports": 9,
+      "Business": 12,
+      "Sci/Tech": 12
+    },
+    "missing_text": 0,
+    "blank_text": 0,
+    "exact_duplicate_text": 0,
+    "mean_words": 53.44,
+    "distinct_2_first35": 0.5695701357466063
+  },
+  "removed_counts": {
+    "invalid": 0,
+    "length_outlier": 0,
+    "exact_duplicate": 0,
+    "manual_exclusion": 10,
+    "near_duplicate": 37,
+    "potential_label_mismatch": 1
+  },
+  "removed_sample_ids": {
+    "invalid": [],
+    "length_outlier": [],
+    "exact_duplicate": [],
+    "manual_exclusion": [
+      "1_002",
+      "1_003",
+      "1_004",
+      "1_007",
+      "1_011",
+      "1_014",
+      "1_016",
+      "1_017",
+      "1_020",
+      "1_021"
+    ],
+    "near_duplicate": [
+      "0_004",
+      "0_006",
+      "0_012",
+      "0_023",
+      "0_024",
+      "0_025",
+      "1_005",
+      "1_009",
+      "1_012",
+      "1_013",
+      "1_019",
+      "1_024",
+      "2_005",
+      "2_006",
+      "2_009",
+      "2_010",
+      "2_014",
+      "2_015",
+      "2_016",
+      "2_018",
+      "2_020",
+      "2_021",
+      "2_023",
+      "2_024",
+      "3_003",
+      "3_006",
+      "3_008",
+      "3_010",
+      "3_012",
+      "3_013",
+      "3_016",
+      "3_018",
+      "3_019",
+      "3_020",
+      "3_021",
+      "3_022",
+      "3_024"
+    ],
+    "potential_label_mismatch": [
+      "2_022"
+    ]
+  },
+  "near_duplicate_pairs_before": 100,
+  "near_duplicate_pairs_after": 0,
+  "near_duplicate_pair_rate_before": 0.024968789013732832,
+  "near_duplicate_pair_rate_after": 0.0,
+  "matched_size_lexical_comparison": {
+    "sample_size": 52,
+    "random_seed": 42,
+    "draws": 200,
+    "unfiltered_random_mean_distinct_2": 0.48465780542986425,
+    "filtered_distinct_2": 0.5695701357466063
+  },
+  "near_duplicate_matches": [
+    {
+      "removed": "0_004",
+      "kept": "0_001",
+      "cosine": 0.9527
+    },
+    {
+      "removed": "0_006",
+      "kept": "0_003",
+      "cosine": 0.9523
+    },
+    {
+      "removed": "0_012",
+      "kept": "0_005",
+      "cosine": 0.9684
+    },
+    {
+      "removed": "0_023",
+      "kept": "0_020",
+      "cosine": 0.9694
+    },
+    {
+      "removed": "0_024",
+      "kept": "0_020",
+      "cosine": 0.9677
+    },
+    {
+      "removed": "0_025",
+      "kept": "0_020",
+      "cosine": 0.9714
+    },
+    {
+      "removed": "1_005",
+      "kept": "1_001",
+      "cosine": 0.9595
+    },
+    {
+      "removed": "1_009",
+      "kept": "1_006",
+      "cosine": 0.9532
+    },
+    {
+      "removed": "1_012",
+      "kept": "1_008",
+      "cosine": 0.9814
+    },
+    {
+      "removed": "1_013",
+      "kept": "1_006",
+      "cosine": 0.9624
+    },
+    {
+      "removed": "1_019",
+      "kept": "1_006",
+      "cosine": 0.9664
+    },
+    {
+      "removed": "1_024",
+      "kept": "1_018",
+      "cosine": 0.9887
+    },
+    {
+      "removed": "2_005",
+      "kept": "2_003",
+      "cosine": 0.9568
+    },
+    {
+      "removed": "2_006",
+      "kept": "2_002",
+      "cosine": 0.967
+    },
+    {
+      "removed": "2_009",
+      "kept": "2_002",
+      "cosine": 0.9707
+    },
+    {
+      "removed": "2_010",
+      "kept": "2_002",
+      "cosine": 0.9891
+    },
+    {
+      "removed": "2_014",
+      "kept": "2_002",
+      "cosine": 0.9772
+    },
+    {
+      "removed": "2_015",
+      "kept": "2_002",
+      "cosine": 0.9691
+    },
+    {
+      "removed": "2_016",
+      "kept": "2_007",
+      "cosine": 0.9585
+    },
+    {
+      "removed": "2_018",
+      "kept": "2_004",
+      "cosine": 0.9546
+    },
+    {
+      "removed": "2_020",
+      "kept": "2_019",
+      "cosine": 0.97
+    },
+    {
+      "removed": "2_021",
+      "kept": "2_003",
+      "cosine": 0.9873
+    },
+    {
+      "removed": "2_023",
+      "kept": "2_004",
+      "cosine": 0.9656
+    },
+    {
+      "removed": "2_024",
+      "kept": "2_002",
+      "cosine": 0.9657
+    },
+    {
+      "removed": "3_003",
+      "kept": "3_001",
+      "cosine": 0.984
+    },
+    {
+      "removed": "3_006",
+      "kept": "3_002",
+      "cosine": 0.9762
+    },
+    {
+      "removed": "3_008",
+      "kept": "3_001",
+      "cosine": 0.9808
+    },
+    {
+      "removed": "3_010",
+      "kept": "3_001",
+      "cosine": 0.9795
+    },
+    {
+      "removed": "3_012",
+      "kept": "3_001",
+      "cosine": 0.9894
+    },
+    {
+      "removed": "3_013",
+      "kept": "3_002",
+      "cosine": 0.9742
+    },
+    {
+      "removed": "3_016",
+      "kept": "3_001",
+      "cosine": 0.9808
+    },
+    {
+      "removed": "3_018",
+      "kept": "3_011",
+      "cosine": 0.9711
+    },
+    {
+      "removed": "3_019",
+      "kept": "3_004",
+      "cosine": 0.9719
+    },
+    {
+      "removed": "3_020",
+      "kept": "3_002",
+      "cosine": 0.9647
+    },
+    {
+      "removed": "3_021",
+      "kept": "3_001",
+      "cosine": 0.9792
+    },
+    {
+      "removed": "3_022",
+      "kept": "3_001",
+      "cosine": 0.9894
+    },
+    {
+      "removed": "3_024",
+      "kept": "3_017",
+      "cosine": 0.9535
+    }
+  ],
+  "potential_label_mismatches": [
+    {
+      "sample_id": "2_022",
+      "category": "Business",
+      "predicted_category": "Sci/Tech"
+    }
+  ],
+  "manual_exclusion_reasons": {
+    "1_002": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_003": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_004": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_007": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_011": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_014": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_016": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_017": {
+      "reason": "Fictitious Denver-Boston Game 7 presented as Denver's first NBA title",
+      "source": "https://www.nba.com/playoffs/2023/series"
+    },
+    "1_020": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    },
+    "1_021": {
+      "reason": "Fictitious retirement announcement about an active NBA player",
+      "source": "https://www.nba.com/news/lebron-james-24th-season-jersey-patch-2026-27"
+    }
+  }
+}
