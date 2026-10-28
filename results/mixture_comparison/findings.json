@@ -1,0 +1,12 @@
+{
+  "comparison_basis": "Five saved models evaluated on the same 7,600 original real AG News test samples",
+  "retrained": false,
+  "best_observed_synthetic_percentage_by_test_macro_f1": 25,
+  "best_observed_test_macro_f1": 0.9085255304767581,
+  "best_vs_real_only_macro_f1_percentage_points": 0.12724944319003617,
+  "pure_synthetic_vs_real_only_macro_f1_percentage_points": -14.311853588806379,
+  "pure_synthetic_sci_tech_recall": 0.3931578947368421,
+  "gpu_peak_memory_status": "not recorded during original training; unavailable without retraining",
+  "training_runtime_definition": "Hugging Face Trainer train_runtime, including in-training validation",
+  "caution": "The 25% vs 0% test difference is small and comes from one seed; treat it as descriptive, not conclusive."
+}
