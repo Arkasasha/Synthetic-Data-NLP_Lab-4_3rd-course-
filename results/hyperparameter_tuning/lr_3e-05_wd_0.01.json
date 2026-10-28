@@ -1,0 +1,61 @@
+{
+  "variant": "lr_3e-05_wd_0.01",
+  "learning_rate": 3e-05,
+  "weight_decay": 0.01,
+  "epochs": 5,
+  "seed": 42,
+  "train_samples": 8000,
+  "validation_samples": 2000,
+  "model_name": "distilbert/distilbert-base-uncased",
+  "model_dir": "models/distilbert_grid/lr_3e-05_wd_0.01",
+  "best_epoch": 3,
+  "best_validation_macro_f1": 0.9090401704160431,
+  "best_validation_loss": 0.39922699332237244,
+  "history": [
+    {
+      "epoch": 1,
+      "eval_loss": 0.31958243250846863,
+      "eval_accuracy": 0.9005,
+      "eval_macro_precision": 0.9031736257843507,
+      "eval_macro_recall": 0.9005000000000001,
+      "eval_macro_f1": 0.9002852924744911,
+      "train_loss": 0.3721280517578125
+    },
+    {
+      "epoch": 2,
+      "eval_loss": 0.3353481590747833,
+      "eval_accuracy": 0.906,
+      "eval_macro_precision": 0.9065200284941561,
+      "eval_macro_recall": 0.9059999999999999,
+      "eval_macro_f1": 0.9061388279912618,
+      "train_loss": 0.18798736572265626
+    },
+    {
+      "epoch": 3,
+      "eval_loss": 0.39922699332237244,
+      "eval_accuracy": 0.909,
+      "eval_macro_precision": 0.909707629712255,
+      "eval_macro_recall": 0.9089999999999999,
+      "eval_macro_f1": 0.9090401704160431,
+      "train_loss": 0.11082762908935546
+    },
+    {
+      "epoch": 4,
+      "eval_loss": 0.4271708130836487,
+      "eval_accuracy": 0.9075,
+      "eval_macro_precision": 0.9076301382633781,
+      "eval_macro_recall": 0.9075,
+      "eval_macro_f1": 0.9074564891256163,
+      "train_loss": 0.06127086639404297
+    },
+    {
+      "epoch": 5,
+      "eval_loss": 0.4487375020980835,
+      "eval_accuracy": 0.9075,
+      "eval_macro_precision": 0.9075244002534778,
+      "eval_macro_recall": 0.9075000000000001,
+      "eval_macro_f1": 0.9075055934541776,
+      "train_loss": 0.036490287780761715
+    }
+  ]
+}
