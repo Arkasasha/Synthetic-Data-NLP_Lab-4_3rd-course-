@@ -1,12 +1,12 @@
-"""Generate a resumable, labeled AG News pilot set with local Qwen3-4B."""
+"""Generate resumable AG News pilot, full, and replacement sets with Qwen3-4B."""
 
 from __future__ import annotations
 
 import argparse
 import csv
 import hashlib
-import os
 import itertools
+import os
 import random
 import re
 import sys
@@ -87,6 +87,15 @@ FULL_SYSTEM_PROMPT = (
     "about real celebrities, actual company announcements and sweeping "
     "world-changing events. Do not copy existing articles. Return only "
     "Headline: and Summary: lines, without markdown or category labels."
+)
+REPLACEMENT_SYSTEM_PROMPT = (
+    FULL_SYSTEM_PROMPT
+    + " Keep the headline and summary together between 35 and 50 words. "
+    "Keep every place in its real country and geographical setting. "
+    "Do not conflate ODI and T20 cricket, or make impossible scientific "
+    "and sports claims. Use ordinary, established crops, materials and "
+    "sports formats rather than invented species or technical jargon. "
+    "If unsure about a place or rule, use a simpler fictional local event."
 )
 
 
@@ -252,12 +261,16 @@ def generate_articles(
     return list(rows.values())
 
 
-def _full_plan(samples_per_category: int, base_seed: int):
+def _full_plan(
+    samples_per_category: int,
+    base_seed: int,
+    scenario_places: tuple[str, ...] = SCENARIO_PLACES,
+):
     """Interleave categories so an interrupted run stays roughly balanced."""
     scenarios = {}
     for label, category in CATEGORIES.items():
         combinations = list(itertools.product(
-            ADVANCED_SCENARIOS[category], SCENARIO_PLACES, SCENARIO_ANGLES
+            ADVANCED_SCENARIOS[category], scenario_places, SCENARIO_ANGLES
         ))
         random.Random(base_seed + label * 100_000).shuffle(combinations)
         scenarios[category] = combinations
@@ -303,9 +316,12 @@ def generate_full_dataset(
     max_retries: int = 4,
     save_every: int = 20,
     retry_offset: int = 0,
+    start_index: int = 1,
+    replacement: bool = False,
 ) -> list[dict[str, str]]:
     """Generate a balanced, resumable full set with both TASK-006 prompts."""
-    if samples_per_category < 1 or max_retries < 1 or save_every < 1 or retry_offset < 0:
+    if (samples_per_category < 1 or max_retries < 1 or save_every < 1
+            or retry_offset < 0 or not 1 <= start_index <= samples_per_category):
         raise ValueError("Sample count, retry count and save interval must be positive")
     if not 0 <= temperature <= 2:
         raise ValueError("Temperature must be between 0 and 2")
@@ -321,8 +337,12 @@ def generate_full_dataset(
                for name, path in prompt_paths.items()}
     hashes = {name: hashlib.sha256(path.read_bytes()).hexdigest()
               for name, path in prompt_paths.items()}
-    system_hash = hashlib.sha256(FULL_SYSTEM_PROMPT.encode("utf-8")).hexdigest()
-    plan = list(_full_plan(samples_per_category, base_seed))
+    system_prompt = REPLACEMENT_SYSTEM_PROMPT if replacement else FULL_SYSTEM_PROMPT
+    system_hash = hashlib.sha256(system_prompt.encode("utf-8")).hexdigest()
+    places = (tuple(place for place in SCENARIO_PLACES if place != "northern Morocco")
+              if replacement else SCENARIO_PLACES)
+    plan = [item for item in _full_plan(samples_per_category, base_seed, places)
+            if int(item[0].split("_")[1]) >= start_index]
     expected = {item[0]: item for item in plan}
     top_p, top_k, num_predict = 0.8, 20, 180
     word_pattern = re.compile(r"[^\W\d_]+(?:'[^\W\d_]+)?", re.UNICODE)
@@ -380,7 +400,7 @@ def generate_full_dataset(
                             json={
                                 "model": MODEL,
                                 "messages": [
-                                    {"role": "system", "content": FULL_SYSTEM_PROMPT},
+                                    {"role": "system", "content": system_prompt},
                                     {"role": "user", "content": prompt},
                                 ],
                                 "stream": False, "think": False,
@@ -453,7 +473,11 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-retries", type=int)
     parser.add_argument("--full", action="store_true", help="Generate the balanced full dataset")
+    parser.add_argument("--start-index", type=int, default=1)
+    parser.add_argument("--replacements", action="store_true")
     args = parser.parse_args()
+    if args.replacements and (not args.full or args.output is None):
+        parser.error("--replacements requires --full and --output")
     generation = generate_full_dataset if args.full else generate_articles
     kwargs = {"base_seed": args.seed}
     if args.samples_per_category is not None:
@@ -464,6 +488,9 @@ def main() -> None:
         kwargs["output_path"] = args.output
     if args.max_retries is not None:
         kwargs["max_retries"] = args.max_retries
+    if args.full:
+        kwargs["start_index"] = args.start_index
+        kwargs["replacement"] = args.replacements
     if args.full:
         for round_number in range(1, 5):
             try:
