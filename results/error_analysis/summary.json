@@ -1,0 +1,75 @@
+{
+  "models": {
+    "real_only": "models/mixtures/synthetic_000",
+    "synthetic_25": "models/mixtures/synthetic_025"
+  },
+  "test_count": 7600,
+  "outcomes": {
+    "both_correct": 6762,
+    "synthetic_fixes": 144,
+    "synthetic_new_error": 135,
+    "both_wrong": 559
+  },
+  "accuracy": {
+    "real_only": 0.9075,
+    "synthetic_25": 0.9086842105263158
+  },
+  "confusion_matrices": {
+    "real_only": [
+      [
+        1699,
+        60,
+        86,
+        55
+      ],
+      [
+        15,
+        1867,
+        13,
+        5
+      ],
+      [
+        87,
+        8,
+        1636,
+        169
+      ],
+      [
+        64,
+        8,
+        133,
+        1695
+      ]
+    ],
+    "synthetic_25": [
+      [
+        1709,
+        54,
+        90,
+        47
+      ],
+      [
+        22,
+        1860,
+        13,
+        5
+      ],
+      [
+        77,
+        9,
+        1631,
+        183
+      ],
+      [
+        51,
+        8,
+        135,
+        1706
+      ]
+    ]
+  },
+  "mean_confidence_incorrect": {
+    "real_only": 0.7748152017593384,
+    "synthetic_25": 0.8279374241828918
+  }
+}
