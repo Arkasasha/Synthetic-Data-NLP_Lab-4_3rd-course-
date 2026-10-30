@@ -72,6 +72,7 @@ The optional real-data hyperparameter study is `src/tune_baseline.py`: nine lear
 - [Experiment index](results/final/experiment_index.json): source-file SHA-256 hashes, hyperparameters, software versions, hardware, and runtime information.
 - Detailed logs and manifests: `results/mixture_training/`, `results/ablations/`, and `results/hyperparameter_tuning/`.
 - [Paired prediction audit](results/error_analysis/paired_predictions.csv) and [representative errors](results/error_analysis/representative_errors.csv).
+- [Final scientific report](report/final_report.pdf) (12 pages), its [editable source](report/final_report.md), the [group presentation](presentation/final_presentation.pptx) (12 slides), and [speaker notes](presentation/speaker_notes.md). Rebuild both deliverables with `.\.venv\Scripts\python.exe src/build_final_submission.py` after changing the source script or figures.
 
 The original five mixture runs recorded training time (60–68 seconds per run) but did **not** record peak GPU memory. The 12 later ablation runs did record peak PyTorch reserved GPU memory (about 1.44–1.53 GiB). No old models were retrained solely to fill that missing field.
 

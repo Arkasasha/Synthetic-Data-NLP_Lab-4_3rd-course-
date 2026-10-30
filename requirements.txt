@@ -18,6 +18,9 @@ scikit-learn>=1.5
 
 # Visualization
 matplotlib>=3.9
+reportlab>=5.1
+python-pptx>=1.0
+pypdf>=6.21
 
 # Experiment notebooks and progress
 jupyterlab>=4.2
