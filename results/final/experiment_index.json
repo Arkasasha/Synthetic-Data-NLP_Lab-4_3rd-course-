@@ -1,0 +1,124 @@
+{
+  "dataset": "fancyzhx/ag_news",
+  "prepared_split_sizes": {
+    "train": 8000,
+    "validation": 2000,
+    "test": 7600
+  },
+  "main_experiment": {
+    "script": "src/train_mixtures.py",
+    "seed": 42,
+    "train_size": 8000,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "epochs": 1,
+    "batch_size": 16,
+    "validation_interval_steps": 100,
+    "synthetic_percentages": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "training_runtime_seconds": [
+      {
+        "synthetic_percentage": 0,
+        "training_runtime_seconds": 68.2369
+      },
+      {
+        "synthetic_percentage": 25,
+        "training_runtime_seconds": 65.0015
+      },
+      {
+        "synthetic_percentage": 50,
+        "training_runtime_seconds": 64.9044
+      },
+      {
+        "synthetic_percentage": 75,
+        "training_runtime_seconds": 66.015
+      },
+      {
+        "synthetic_percentage": 100,
+        "training_runtime_seconds": 60.3941
+      }
+    ],
+    "peak_gpu_memory": "not recorded during original runs"
+  },
+  "ablation_experiment": {
+    "script": "src/run_ablations.py",
+    "seeds": [
+      42,
+      123,
+      2026
+    ],
+    "train_size": 8000,
+    "synthetic_percentage": 50,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "epochs": 1,
+    "batch_size": 16,
+    "run_count": 12,
+    "mean_training_runtime_seconds": 46.255599999999994,
+    "peak_gpu_reserved_gb_range": [
+      1.443359375,
+      1.53125
+    ]
+  },
+  "hyperparameter_grid": {
+    "script": "src/tune_baseline.py",
+    "learning_rates": [
+      2e-05,
+      3e-05,
+      5e-05
+    ],
+    "weight_decays": [
+      0,
+      0.01,
+      0.1
+    ],
+    "epochs_per_run": 5
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_total_memory_mib": 8187,
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "os": "Windows-10-10.0.26200-SP0"
+  },
+  "software": {
+    "python": "3.11.9",
+    "torch": "2.13.0+cu132",
+    "transformers": "5.21.0",
+    "datasets": "5.1.0",
+    "accelerate": "1.15.0",
+    "sentence-transformers": "6.2.0",
+    "safetensors": "0.8.0",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "jupyterlab": "4.6.4",
+    "ipykernel": "7.4.0",
+    "tqdm": "4.70.1",
+    "python-dotenv": "1.2.4",
+    "requests": "2.34.2"
+  },
+  "source_sha256": {
+    "results/mixture_comparison/comparison.csv": "d49a5af4c2d33d86d4d6b77f714a602c812cf17426c07801ffb2c8764078d5df",
+    "results/ablations/comparison.csv": "0229767bc0dfc6a4cb5e00ed1b60a69d7f327ddc892f384c25bf7b0372f048af",
+    "results/ablations/runs.csv": "df651406c1f2264cb1769b0e55f99740e86557a3c6b8c1e0f94b8300f57e8537",
+    "results/hyperparameter_tuning/best_variants.csv": "8d683c6676385f1ff3eb2f1f60183bd62061df7f8a674408ba51eebdf106fc2d",
+    "results/mixture_training/summary.json": "c7913ceb6e282bc1987c86f47113178927264c47cc1fbafc3e9e9e3db97fda2e",
+    "results/ablations/paired_differences.json": "9abe52ac2040fbe2cb482ef5c6e226d9b6963e9c42083629ecc66bb6d09c12bf",
+    "results/error_analysis/summary.json": "d54993ef4ee1985924505e8ac3e82c2b60516c3f33392434b2e73fcc0c81c637",
+    "data/synthetic/final_8000.csv": "472f52188b691cb46516468e9f2df9f3f80f9bc293a509763b1a122d336a8b47"
+  },
+  "result_files": [
+    "results/final/main_results.csv",
+    "results/final/ablation_results.csv",
+    "results/final/performance_vs_synthetic.png",
+    "results/final/ablation_comparison.png",
+    "results/final/ablation_per_class_recall.png"
+  ]
+}
