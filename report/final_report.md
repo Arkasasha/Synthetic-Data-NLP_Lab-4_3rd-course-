@@ -1,7 +1,7 @@
 # Synthetic News Data for AG News Classification
 
 Final scientific report | Natural Language Processing | 30 October 2026
-Oleksandr Buhrii and GrAndezit
+Prepared by Oleksandr Buhrii and Maksym Khramtsov
 
 ## Abstract
 
@@ -230,7 +230,7 @@ Balanced modest augmentation can match real-only DistilBERT performance on this 
 
 ## Individual contributions
 
-Oleksandr Buhrii: reproducible real-data splitting; DistilBERT baseline, hyperparameter grid, mixture training and comparison; 50% ablation runs; paired error analysis; final result consolidation and report integration. GrAndezit: prompt design and comparison; Qwen3 synthetic generation; quality filtering and replacement pipeline; dataset quality, diversity, and bias audits. These statements follow the project files and Git author history; the final report and presentation synthesize both streams.
+Oleksandr: reproducible real-data splitting; DistilBERT baseline, hyperparameter grid, mixture training and comparison; 50% ablation runs; paired error analysis; final result consolidation and report integration. Maksym: prompt design and comparison; Qwen3 synthetic generation; quality filtering and replacement pipeline; dataset quality, diversity, and bias audits. The final report and presentation synthesize both streams.
 
 ## Reproducibility and artifact status
 

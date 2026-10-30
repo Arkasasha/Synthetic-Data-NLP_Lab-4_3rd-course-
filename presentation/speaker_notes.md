@@ -16,11 +16,11 @@ Oleksandr | 0:55 | Describe class balance and why keeping validation/test real m
 
 ## Slide 4: Generate and screen synthetic news
 
-GrAndezit | 1:10 | Explain prompt contrast and screened replacements. State that automatic filters are quality proxies, not factual guarantees.
+Maksym | 1:10 | Explain prompt contrast and screened replacements. State that automatic filters are quality proxies, not factual guarantees.
 
 ## Slide 5: Data quality findings
 
-GrAndezit | 1:10 | Explain distinct-2 and semantic diversity briefly. Mention the small review sample and repeated headline artifacts.
+Maksym | 1:10 | Explain distinct-2 and semantic diversity briefly. Mention the small review sample and repeated headline artifacts.
 
 ## Slide 6: Controlled model setup
 
@@ -44,7 +44,7 @@ Oleksandr | 1:05 | Give one category-boundary example: a technology company stor
 
 ## Slide 11: Discussion and conclusion
 
-GrAndezit | 1:00 | Summarize the evidence without claiming a robust 25% optimum or a proven cause for every error.
+Maksym | 1:00 | Summarize the evidence without claiming a robust 25% optimum or a proven cause for every error.
 
 ## Slide 12: Contributions and sources
 
