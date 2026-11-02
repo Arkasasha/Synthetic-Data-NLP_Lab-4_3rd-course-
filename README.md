@@ -86,3 +86,5 @@ git status -sb
 ```
 
 A clean working tree and a branch with no ahead commits indicate that tracked local code and results match the remote branch. Git ignores local checkpoints and prepared dataset caches; their omission from GitHub is intentional and documented above.
+
+Dataset was taken from: https://github.com/batmanlab/Mammo-CLIP
